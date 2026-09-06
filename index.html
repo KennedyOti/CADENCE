@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practical essays on building better systems for thoughtful work.">
+    <title>Cadence Journal | Thoughtful systems for modern work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --paper: #f6f3ed;
+            --ink: #202421;
+            --muted: #6d746d;
+            --line: #d9d8d0;
+            --coral: #e8684a;
+            --teal: #174c4a;
+            --yellow: #f2c66d;
+        }
+
+        * { box-sizing: border-box; }
+        body { background: var(--paper); color: var(--ink); font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, .brand { font-family: 'Fraunces', serif; }
+        a { color: inherit; text-decoration: none; }
+        .mono, .eyebrow { font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; }
+        .site-header { border-bottom: 1px solid var(--line); }
+        .brand { font-size: 1.65rem; font-weight: 700; letter-spacing: -.04em; }
+        .brand-mark { color: var(--coral); }
+        .nav-link { color: var(--muted); font-size: .88rem; font-weight: 600; }
+        .nav-link:hover { color: var(--coral); }
+        .btn-coral { background: var(--coral); border: 1px solid var(--coral); color: #fff; font-size: .82rem; font-weight: 700; padding: .7rem 1.1rem; }
+        .btn-coral:hover { background: #c95238; border-color: #c95238; color: #fff; }
+        .hero { border-bottom: 1px solid var(--line); padding: 5.5rem 0 4.8rem; }
+        .hero h1 { font-size: clamp(3.3rem, 7vw, 6.4rem); line-height: .93; letter-spacing: -.06em; max-width: 760px; }
+        .hero-copy { color: var(--muted); font-size: 1.08rem; line-height: 1.75; max-width: 500px; }
+        .hero-image { aspect-ratio: 1.15; object-fit: cover; filter: saturate(.82); }
+        .feature-card { background: var(--teal); color: #f5f0e6; padding: 1.5rem; }
+        .feature-card .eyebrow { color: var(--yellow); }
+        .feature-card h2 { font-size: 1.65rem; line-height: 1.05; }
+        .feature-card p { color: #bfd0c8; font-size: .88rem; line-height: 1.6; }
+        .section-heading { border-bottom: 1px solid var(--line); padding-bottom: 1rem; }
+        .section-heading h2 { font-size: 2.4rem; letter-spacing: -.04em; }
+        .post-card { border-bottom: 1px solid var(--line); padding-bottom: 2rem; height: 100%; }
+        .post-card img { aspect-ratio: 1.35; object-fit: cover; margin-bottom: 1.35rem; filter: saturate(.78); }
+        .post-card h3 { font-size: 1.45rem; line-height: 1.1; }
+        .post-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+        .post-meta { color: var(--muted); font-size: .75rem; }
+        .topic { border: 1px solid var(--line); color: var(--muted); display: inline-block; font-size: .8rem; font-weight: 600; margin: .25rem .2rem; padding: .55rem .8rem; }
+        .topic:hover { border-color: var(--coral); color: var(--coral); }
+        .newsletter { background: var(--yellow); padding: 3.5rem; }
+        .newsletter h2 { font-size: 2.7rem; line-height: 1; }
+        .newsletter p { max-width: 450px; }
+        .newsletter .form-control { border: 1px solid var(--ink); border-radius: 0; padding: .8rem 1rem; }
+        .newsletter .btn { border-radius: 0; background: var(--ink); color: #fff; padding-inline: 1.4rem; }
+        footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+        @media (max-width: 767px) {
+            .hero { padding: 3.5rem 0; }
+            .hero h1 { font-size: 3.5rem; }
+            .hero-image { aspect-ratio: 1.4; }
+            .newsletter { padding: 2rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md py-3" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand brand" href="#top">cadence<span class="brand-mark">.</span></a>
+                <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="mono">Menu</span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-4">
+                        <li class="nav-item"><a class="nav-link" href="#latest">Latest</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#topics">Topics</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="btn btn-coral" href="#newsletter">Join the list <span aria-hidden="true">↗</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container">
+                <div class="row align-items-end g-5">
+                    <div class="col-lg-7">
+                        <p class="eyebrow mb-4">A journal for better work</p>
+                        <h1>Make space for the work that matters.</h1>
+                        <p class="hero-copy mt-4 mb-4">Ideas, field notes, and practical systems for people building thoughtful things in a noisy world.</p>
+                        <a class="btn btn-coral" href="#latest">Read the latest <span aria-hidden="true">↓</span></a>
+                    </div>
+                    <div class="col-lg-5">
+                        <img class="hero-image w-100" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85" alt="Notebook, coffee, and laptop on a desk">
+                        <div class="feature-card">
+                            <p class="eyebrow mb-3">Featured / 08 min read</p>
+                            <h2 class="mb-3">The quiet advantage of a slower operating system</h2>
+                            <p class="mb-0">Good work needs room to become good. A field guide to designing a week with fewer, better commitments.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="latest" class="py-5">
+            <div class="container">
+                <div class="section-heading d-flex justify-content-between align-items-end mb-4">
+                    <h2 class="mb-0">Latest notes</h2>
+                    <span class="mono d-none d-sm-block">01—06 / 2026</span>
+                </div>
+                <div class="row g-4">
+                    <article class="col-md-4">
+                        <div class="post-card">
+                            <img class="w-100" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=85" alt="Hands writing in a notebook">
+                            <p class="eyebrow mb-3" style="color:var(--coral)">Practice</p>
+                            <h3><a href="#newsletter">A small ritual for starting difficult work</a></h3>
+                            <p>Before the plan, there is the threshold. Three minutes that make beginning feel possible.</p>
+                            <span class="post-meta">June 18, 2026 · 04 min read</span>
+                        </div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="post-card">
+                            <img class="w-100" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=85" alt="Light-filled modern workspace">
+                            <p class="eyebrow mb-3" style="color:var(--coral)">Systems</p>
+                            <h3><a href="#newsletter">Your calendar is a design problem</a></h3>
+                            <p>Time management gets easier when you stop treating every hour as interchangeable.</p>
+                            <span class="post-meta">June 11, 2026 · 06 min read</span>
+                        </div>
+                    </article>
+                    <article class="col-md-4">
+                        <div class="post-card">
+                            <img class="w-100" src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=800&q=85" alt="Collaborators working around a table">
+                            <p class="eyebrow mb-3" style="color:var(--coral)">People</p>
+                            <h3><a href="#newsletter">The meeting after the meeting</a></h3>
+                            <p>What teams say in the hallway often tells you more than what made it into the agenda.</p>
+                            <span class="post-meta">June 03, 2026 · 05 min read</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="topics" class="py-5">
+            <div class="container">
+                <div class="row g-4 align-items-center border-top pt-4">
+                    <div class="col-md-3"><p class="eyebrow mb-0">Explore topics</p></div>
+                    <div class="col-md-9"><a class="topic" href="#latest">Focus</a><a class="topic" href="#latest">Creative practice</a><a class="topic" href="#latest">Team culture</a><a class="topic" href="#latest">Automation</a><a class="topic" href="#latest">Leadership</a></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="pb-5">
+            <div class="container">
+                <div class="newsletter row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <p class="eyebrow mb-3">The Sunday dispatch</p>
+                        <h2>One useful idea.<br>Every Sunday.</h2>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="mb-4">A short letter about doing meaningful work with a little more intention. No noise, no daily digest.</p>
+                        <form class="d-flex" onsubmit="event.preventDefault(); this.querySelector('button').textContent='You are in'; this.querySelector('input').value='';" aria-label="Newsletter signup">
+                            <label class="visually-hidden" for="email">Email address</label>
+                            <input class="form-control" id="email" type="email" placeholder="you@example.com" required>
+                            <button class="btn" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about" class="py-4">
+        <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+            <span class="brand">cadence<span class="brand-mark">.</span></span>
+            <span>Built for thoughtful work · © 2026</span>
+            <span>Instagram · LinkedIn · RSS</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
